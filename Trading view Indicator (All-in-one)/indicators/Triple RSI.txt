@@ -1,0 +1,24 @@
+/@version=3
+//ability to plot up to 3 rsi. added the 50%, mid line. all credits go to Chris Moody
+study("Triple RSI", shorttitle="RSI_X3")
+
+src = input(close, title="Source")
+
+rsi_1 = input(7, title="1st RSI")
+rsi_2 = input(14, title="2nd RSI")
+rsi_3 = input(21, title="3rd RSI")
+
+rsi1 = rsi(src, rsi_1)
+rsi2 = rsi(src, rsi_2)
+rsi3 = rsi(src, rsi_3)
+
+
+h0 = hline(80)
+h1 = hline(20)
+h2 = hline(50)
+
+
+plot(rsi1, color=red, style=line, linewidth=2, transp=0, title="1st RSI")
+plot(rsi2, color=yellow, style=line, linewidth=2, transp=0, title="2nd RSI")
+plot(rsi3, color=aqua, style=line, linewidth=2, transp=0, title="3rd RSI")
+
